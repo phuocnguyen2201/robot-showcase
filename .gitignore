@@ -1,0 +1,4 @@
+# ignore ALL .xml, .html, .log files
+*.xml
+*.html
+*.log

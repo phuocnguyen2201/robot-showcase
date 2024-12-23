@@ -1,0 +1,2 @@
+*** Variables ***
+${enter}    \\13
