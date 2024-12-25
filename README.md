@@ -18,6 +18,7 @@ In the terminal cd to the ../tests/
 robot [your desired test suite]
 
 ##Folder structure
+```
 project-root/
 ├── keywords/               # Contains all keywords
 │   └── keywords.robot      # Contain keywords
@@ -31,3 +32,4 @@ project-root/
 ├── variables/              # Shared resources variables
 ├── README.md               # Documentation for the project
 └── robotframework.log 
+```
