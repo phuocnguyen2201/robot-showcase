@@ -7,7 +7,9 @@ Resource    ../resources/keys.robot
 
 Open Todo App
     Open Browser    ${url}    firefox
-
+Open Multiple Todo App
+    [Arguments]    ${url}
+    Open Browser    ${url}    firefox
 I added 1 item "${text}"
     Wait Until Page Contains Element    ${input-locator}
     Input Text    ${input-locator}    ${text}
@@ -20,7 +22,7 @@ I added "${count}" items
         I added 1 item "testing number ${index}"
 
     END
-Total completed items should be
+Total completed items should be 1
     ${size}    SeleniumLibrary.Get Element Count    ${todo-item-checked}
     ${size}    Convert To String    ${size}
     Should Be Equal    ${size}    1
@@ -32,10 +34,13 @@ Total active items should be "${total}"
     Should Contain    ${text}     ${total}
 
 Mark 1 item
-    Wait Until Element Is Enabled    ${active-items}
+    Wait Until Page Contains Element    ${active-items}
     Click Element    ${active-items}
 
-Now completed tab should have 1 task done
+Completed tab
     Click Element    ${completed-tab}
-    Wait Until Page Contains Element    ${todo-item-checked}
-    Wait Until Element Is Visible     ${todo-item-checked}
+    Page Should Contain Element    ${completed-view}
+
+Clear completed
+    Click Button    ${clear-btn}
+    Page Should Not Contain Element    ${completed-view}

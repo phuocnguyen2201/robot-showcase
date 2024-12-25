@@ -2,8 +2,10 @@
 Suite Setup    Setup Global Variables
 Library    SeleniumLibrary
 Library    XML
+Library    OperatingSystem
 Resource    ../../resources/locators.robot
 Resource    ../../resources/keys.robot
+Resource    ../../resources/target.robot
 Resource    ../../keywords/keywords.robot
 *** Keywords ***
 Setup Global Variables
@@ -19,12 +21,29 @@ Add one item
 
 Add many items
     Open Todo App
-    I added "4" items
+    when I added "4" items
     ${total}    SeleniumLibrary.Get Element Count    ${todo-item}
     ${total}    Convert To String    ${total}
-    Total active items should be "${total}"
+    then Total active items should be "${total}"
 
-Mark complete 1 item
-    Mark 1 item
-    Now completed tab should have 1 task done
-    Total completed items should be
+Mark complele an item
+    when Mark 1 item
+    then Completed tab
+    Close All Browsers
+
+Full workflow todo app
+    FOR    ${url}    IN    @{urls}
+        Open Multiple Todo App    ${url}
+
+        I added "3" items
+        Total active items should be "3"
+
+        Mark 1 item
+        Completed tab
+
+
+        Clear completed
+    END
+
+END
+    Close All Browsers
