@@ -8,3 +8,7 @@ Library    SeleniumLibrary
 Running correct test case
     Open Application
     Enter Vehicle Data
+    Enter Insurance Data
+    Enter Product Data
+    Select Price Option
+    Enter Personal Information

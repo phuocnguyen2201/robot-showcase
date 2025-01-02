@@ -20,21 +20,22 @@ ${next}    id=nextenterinsurantdata
 
 ${first_name}    id=firstname
 ${last_name}    id=lastname
-${date_of_birth}    id=dateofbirth
-${gender}    xpath=//label[@for='gendermale']
+${date_of_birth}    id=birthdate
+${gender}    document.getElementById('gendermale').click()
 ${street_address}    id=streetaddress
 ${country}    id=country
 ${zip_code}    id=zipcode
 ${city}    id=city
 ${occupation}    id=occupation
-${hobbies}    xpath=//label[@for='speeding']
+
 ${website}    id=website
 
 ${start_date}    id=startdate
 ${insurance_sum}    id=insurancesum
 ${merit_rating}    id=meritrating
-${damage_insurance}    xpath=//label[@for='damageinsurance']
+${damage_insurance}    id=damageinsurance
 ${courtesy_car}    id=courtesycar
+${next_product}    id=nextenterproductdata
 
 ${price_silver}    xpath=//input[@id='selectsilver']
 ${price_gold}    xpath=//input[@id='selectgold']
@@ -48,7 +49,11 @@ ${password}    id=password
 ${confirm_password}    id=confirmpassword
 ${comments}    id=Comments
 
+${next_price_option}    id=nextselectpriceoption
+${next_quote}    id=nextsendquote
+
 ${send}    id=sendemail
 
 ${success_message}    xpath=//h2[text()='Sending e-mail success!']
 ${confirm_button}    xpath=//div[@class='sa-confirm-button-container']//button[@class='confirm']
+
