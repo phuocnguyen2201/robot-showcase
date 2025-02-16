@@ -2,22 +2,25 @@
 
 This repo contains simple test suite for a Todo application, a Resful API, a Web application using Robot framework.
 
-##Overview
+## Overview
 This repo demonstrate simple automated test cases for all the apps.
 
-##Installation
-1. Clone the repository:
+## Installation
+Clone the repository:
+
     git clone https://github.com/phuocnguyen2201/robot-showcase.git
-2. If your machine don't have python and robot framework yet:
+If your machine don't have python and robot framework yet:
+
     brew install python (MacOS)
     pip install robotframework
 
-##Running the test
+## Running the test
 
-    In the terminal cd to the /tests folder and using the command robot [your desired test suite]
+In the terminal cd to the /tests folder and using the command robot [your desired test suite]
+
     Exapmle: robot todoMVC.
 
-##Folder structure
+## Folder structure
 ```
 project-root/
 ├── keywords/                       # Contains all keywords
